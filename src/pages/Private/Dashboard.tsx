@@ -1,7 +1,14 @@
+import PrivateLayout from "../../layouts/PrivateLayout"
+
 const Dashboard = () => {
-  return (
-    <div>Dashboard</div>
-  )
+    return (
+
+        <>
+            <PrivateLayout>
+                Dashboard
+            </PrivateLayout>
+        </>
+    )
 }
 
 export default Dashboard

@@ -1,14 +1,18 @@
 import { ReactNode } from 'react';
+import PrivateSidebar from '../Components/Private/PrivateSidebar';
 
 interface Props {
-    children?: ReactNode
+  children?: ReactNode
 }
 
 const PrivateLayout = ({ children }: Props) => {
   return (
-    <div>
-      <main>{children}</main>
-    </div>
+    <>
+      <div className='flex flex-row'>
+        <PrivateSidebar />
+        <main>{children}</main>
+      </div>
+    </>
   );
 };
 
