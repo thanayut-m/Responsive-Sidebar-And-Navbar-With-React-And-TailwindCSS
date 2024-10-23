@@ -1,16 +1,21 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 import PrivateSidebar from '../Components/Private/PrivateSidebar';
+import PrivateNavbar from './../Components/Private/PrivateNavbar';
 
 interface Props {
   children?: ReactNode
 }
 
 const PrivateLayout = ({ children }: Props) => {
+  const [sidebarToggle, setSidebarToggle] = useState(false);
   return (
     <>
-      <div className='flex flex-row'>
+      <div className='flex flex-col '>
         <PrivateSidebar />
-        <main>{children}</main>
+        <div className="w-full">
+          <PrivateNavbar />
+        </div>
+        <main className=" xl:ml-64 ">{children}</main>
       </div>
     </>
   );
