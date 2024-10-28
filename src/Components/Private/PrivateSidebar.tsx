@@ -4,12 +4,12 @@ interface PrivateSidebarProps {
   sidebarToggle: boolean;
 }
 
-const PrivateSidebar = ({ sidebarToggle } : PrivateSidebarProps) => {
+const PrivateSidebar: React.FC<PrivateSidebarProps> = ({ sidebarToggle }) => {
   return (
     <>
-      <div className="hidden w-64 bg-gray-800 fixed h-full px-4 py-2 xl:block">
+      <div className={`bg-gray-800 fixed h-full px-4 py-2 xl:w-64 xl:block ${sidebarToggle ? 'w-64 block' : 'hidden'}`}>
         <div className="flex justify-center my-2 mb-4">
-          <h1 className="text-2xl text-white font-bold">Admin Dashboard</h1>
+          <h1 className="text-2xl text-white font-bold">ICat Software</h1>
         </div>
         <hr />
         <ul className="mt-3 text-white font-bold">

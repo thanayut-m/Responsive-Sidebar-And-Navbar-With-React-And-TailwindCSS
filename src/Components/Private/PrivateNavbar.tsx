@@ -1,11 +1,16 @@
 import { FaBars, FaBell, FaSearch, FaUserCircle } from "react-icons/fa"
 
-const privateNavbar = () => {
+interface privateNavbarProps {
+  onToggle: () => void;
+  sidebarToggle: boolean;
+}
+
+const privateNavbar: React.FC<privateNavbarProps> = ({onToggle,sidebarToggle}) => {
   return (
     <div>
-      <nav className="bg-gray-800 px-4 py-3 flex justify-between xl:ml-64">
+      <nav className={`bg-gray-800 px-4 py-3 flex justify-between xl:ml-64 ${sidebarToggle ? 'ml-64' : ''} `}>
         <div className="flex items-center text-xl">
-          <FaBars className="text-white me-4 cursor-pointer xl:hidden" />
+          <FaBars onClick={onToggle} className="text-white me-4 cursor-pointer xl:hidden" />
           <span className="text-white font-semibold xl:hidden">ICat Software</span>
         </div>
         <div className="flex items-center gap-x-5">
